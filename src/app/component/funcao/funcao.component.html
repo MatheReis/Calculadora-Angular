@@ -2,10 +2,15 @@
 <!--Calculadora-->
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 
+
+
 <div id="Principal">
 <div id="Calculadora">
 <input id="Pantalla" class="Pantalla"
 type="tel" maxLenght="4" value="{{this.valueTeste}}" disabled>
+<button  id="btn-modal" class="btn-modal" (click)="chamarModal()"> <img id="btn-image" class="btn-image" src="https://o.remove.bg/downloads/7049e784-d098-4b2d-8ba6-1412839db30a/Simbolo-Hist%C3%B3rico-removebg-preview.png"/>
+</button>
+
 
   <div id="Teclado" class="buttons">
   <button class="button" value="C" (click)="clean()">C</button>

@@ -1,27 +1,32 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit, Output,EventEmitter  } from '@angular/core';
+
 
 @Component({
   selector: 'app-funcao',
   templateUrl: './funcao.component.html',
-  styleUrls: ['./funcao.component.css']
+  styleUrls: ['./funcao.component.css'],
+  template: ''
 })
 
 export class FuncaoComponent implements OnInit {
 
   constructor() { }
 
-  public valueTeste: string = '';
-  public clearChar: string = '<'
-  public backValue: string = '' ;
-  public limitCaracteres = '4';
-  public numeroDigitado: number = 0;
+  @Output() eventHistoricos = new EventEmitter<Array<string>>();
+  @Output() eventChamarModal = new EventEmitter<void>();
 
-  public selector() {
-     var numero = document.getElementById('resultado')?.innerHTML;
-  }
+
+  public historicos: Array<string> = [];
+  public historico: string = '';
+
+  public valueTeste: string = '';
+  public clearChar: string = '<';
 
   public insert(num: string){
-    this.valueTeste += num;
+  console.log('Número inserido pelo usuário:', num);
+   this.valueTeste += num;
+   console.log('Conta:', this.valueTeste)
+
   }
 
   public clean(){
@@ -29,20 +34,36 @@ export class FuncaoComponent implements OnInit {
   }
 
   public back(){
-
+   this.valueTeste = this.valueTeste.substring(1)
   }
 
-  public calcular(num: string){
-    this.valueTeste = eval(this.valueTeste)
-}
-   public limitNumber() {
-     this.valueTeste = this.limitCaracteres
-   }
+  // Função calcular e histórico
+   public calcular(num: string){
+    this.historico = this.valueTeste + '='; // 9+9=
+
+    //Calcula os números inseridos no insert
+    this.valueTeste = eval(this.valueTeste); // 18
+
+    console.log('Valor depois de calculado:', this.valueTeste); // 18
+
+    //Exibi o histórico
+    this.historico += this.valueTeste // 9+9=18
+
+    console.log('Histórico', this.historico); // 9+9=18
+
+    this.historicos.push(this.historico);
+
+    console.warn('this.historicos dentro do funcao component', this.historicos);
+    this.eventHistoricos.emit(this.historicos);
+  }
+
+  chamarModal(){
+   this.eventChamarModal.emit();
+  }
 
 
-ngOnInit() {
+  ngOnInit(): void {
 
-}
-
+  }
 
 }

@@ -1,22 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { ResultadoComponent } from './component/resultado/resultado.component';
-import { NumerosComponent } from './component/numeros/numeros.component';
 import { FuncaoComponent } from './component/funcao/funcao.component';
+import { AppComponent } from './app.component';
+import { ModalModule } from './modal/modal.module';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgModule } from "@angular/core";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ResultadoComponent,
-    NumerosComponent,
-    FuncaoComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports:  [
+              BrowserModule,
+              BrowserAnimationsModule,
+              FormsModule,
+              ModalModule,
+            ],
+  declarations: [AppComponent, FuncaoComponent],
+  bootstrap:    [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

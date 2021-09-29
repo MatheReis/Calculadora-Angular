@@ -18,12 +18,13 @@ body{
 	margin-top:-40px;
 }
 
+
 #Calculadora {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
-
+/*Display*/
 #Pantalla{
   background: white;
   background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
@@ -39,6 +40,7 @@ body{
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
 }
+
 #Teclado{
   background: #3A434F;
 
@@ -72,3 +74,25 @@ body{
 .button:active{
   transform: scale(1);
 }
+
+.btn-modal{
+  position: absolute;
+    height: 6%;
+    width: 18%;
+    left: 7%;
+    top: 24.5%;
+}
+
+#btn-image{
+  position: absolute;
+    height: 110%;
+    width: 68%;
+    left: 18%;
+    top: 0%;
+}
+
+.btn-modal:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.1s;
+  }

@@ -2,14 +2,23 @@
   html{
   background: lightseagreen;
 }
-
 </style>
 
-<app-resultado></app-resultado>
+<app-modal #modal>
 
-<app-numeros></app-numeros>
+  <h1>Histórico</h1>
+  <ul>
+    <li id="lista" *ngFor="let item of this.historicos">{{item}}</li>
+  </ul>
+</app-modal>
 
-<app-funcao></app-funcao>
 
+<app-funcao
+(eventHistoricos)="this.receberHistorico($event)"
+(eventChamarModal)="this.modal.toggle()">
+
+</app-funcao>
+
+<app-modal></app-modal>
 
 
