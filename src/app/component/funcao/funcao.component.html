@@ -1,0 +1,42 @@
+
+<!--Calculadora-->
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+<div id="Principal">
+<div id="Calculadora">
+<input id="Pantalla" class="Pantalla"
+type="tel" maxLenght="4" value="{{this.valueTeste}}" disabled>
+<button  id="btn-modal" class="btn-modal" (click)="chamarModal()">
+ <img id="btn-image" src="./../../../assets/history-icon.png">
+</button>
+
+
+  <div id="Teclado" class="buttons">
+  <button class="button" value="C" (click)="clean()">C</button>
+  <button class="button" value="" (click)="back()">{{this.clearChar}}</button>
+  <button class="button" value="/" (click)="insert('/')">÷</button>
+  <button class="button" value="*" (click)="insert('*')">x</button>
+  <button class="button" value="+" (click)="insert('+')">+</button>
+  <button class="button" value="-" (click)="insert('-')">-</button>
+
+  <button class="button" value="7" (click)="insert('7')">7</button>
+  <button class="button" value="8" (click)="insert('8')">8</button>
+  <button class="button" value="9" (click)="insert('9')">9</button>
+
+  <button class="button" value="4" (click)="insert('4')">4</button>
+  <button class="button" value="5" (click)="insert('5')">5</button>
+  <button class="button" value="6" (click)="insert('6')">6</button>
+
+  <button class="button" value="1" (click)="insert('1')">1</button>
+  <button class="button" value="2" (click)="insert('2')">2</button>
+  <button class="button" value="3" (click)="insert('3')">3</button>
+
+  <button class="button" value="0" (click)="insert('0')">0</button>
+  <button class="button" value="." (click)="insert('.')">,</button>
+
+  <button class="button" value="=" (click)="calcular('')">=</button>
+   </div>
+  </div>
+</div>
+
+
